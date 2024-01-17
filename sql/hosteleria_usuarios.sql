@@ -31,7 +31,7 @@ CREATE TABLE `usuarios` (
   `contra` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `correo` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'nom1','apel1','1999-09-09','us1','cont1','cor@us.com'),(2,'nom2','apel2','1988-10-10','us2','cont2','cor2@us.com'),(3,'Juan','Pérez','1990-01-01','us3','contraseña123','cor3@us.com');
+INSERT INTO `usuarios` VALUES (1,'nom1','apel1','1999-09-09','us1','cont1','cor@us.com'),(2,'nom2','apel2','1988-10-10','us2','cont2','cor2@us.com'),(3,'Juan','Pérez','1990-01-01','us3','contraseña123','cor3@us.com'),(4,'José','García','1998-11-04','us4','contraseña123','cor4@us.com');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,20 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-16 18:36:28
-
-/* EJEMPLO DE JSON PASADO POR POSTMAN PARA HACER COMPROBACION SOBRE LA CREACION Y COMPROBACION DE EXISTENCIA DE UN USUARIO
-   CAMBIANDO EL USUARIO Y LA CONTRASEÑA ALTERNATIVAMENTE
-
-{
-  "nombre": "José",
-  "apellido": "García",
-  "fechaNacimiento": "1998-11-04",
-  "usuario": "us4",
-  "contra": "contraseña123",
-  "correo": "cor4@us.com"
-}
-
-*/
-
-
+-- Dump completed on 2024-01-17 10:19:23

@@ -32,7 +32,7 @@ CREATE TABLE `reserva` (
   KEY `idusuario_idx` (`id_usuario`),
   KEY `idrestaurante_idx` (`id_restaurante`),
   CONSTRAINT `idrestaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurante` (`id_restaurante`),
-  CONSTRAINT `idusuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
+  CONSTRAINT `idusuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-16 18:36:28
+-- Dump completed on 2024-01-17 10:19:23
