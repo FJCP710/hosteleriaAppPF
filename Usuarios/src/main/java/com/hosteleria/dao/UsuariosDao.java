@@ -10,6 +10,9 @@ import com.hosteleria.model.Usuario;
 
 public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 	
-	@Query(value="SELECT * FROM usuarios WHERE usuario = :usuario OR correo = :correo", nativeQuery = true)
+	@Query(value="SELECT * FROM usuarios u WHERE u.usuario = :usuario OR u.correo = :correo", nativeQuery = true)
 	public List<Usuario> comprobarAltaUsuario(@Param("usuario") String usuario, @Param("correo") String correo);
+	
+	@Query(value="SELECT u.nombre, u.apellido FROM usuarios u WHERE u.usuario = :usuario", nativeQuery = true)
+	public List<String> buscarNombrePorUsuario(@Param("usuario") String usuario);
 }

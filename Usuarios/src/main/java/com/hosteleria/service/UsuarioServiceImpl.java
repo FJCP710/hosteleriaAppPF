@@ -1,5 +1,7 @@
 package com.hosteleria.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if(dao.comprobarAltaUsuario(usuario.getUsuario(), usuario.getCorreo()).size() == 0) {
 			dao.saveAndFlush(usuario);
 		}
+	}
+
+	@Override
+	public List<String> buscarNombrePorUsuario(String usuario) {
+		List<String> nombres = dao.buscarNombrePorUsuario(usuario);
+		return nombres;
 	}
 
 }

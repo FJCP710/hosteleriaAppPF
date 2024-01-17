@@ -1,0 +1,14 @@
+ EJEMPLO DE JSON PASADO POR POSTMAN PARA HACER COMPROBACION SOBRE LA CREACION Y COMPROBACION DE EXISTENCIA DE UN USUARIO
+   CAMBIANDO EL USUARIO Y LA CONTRASEÑA ALTERNATIVAMENTE
+{
+  "nombre": "José",
+  "apellido": "García",
+  "fechaNacimiento": "1998-11-04",
+  "usuario": "us4",
+  "contra": "contraseña123",
+  "correo": "cor4@us.com"
+}
+
+
+EJEMPLO URL PASADA POR POSTMAN PARA MÉTODO DE BÚSQUEDA DE NOMBRE Y APELLIDO MEDIANTE USUARIO
+http://localhost:8080/usuario?usuario=us3
