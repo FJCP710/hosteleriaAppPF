@@ -1,6 +1,6 @@
 package com.hosteleria.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ public class Usuario {
 	private String apellido;
 	
 	@Column(name="fecha_nacimiento")
-	private Date fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	
 	private String usuario;
 	private String contra;
@@ -27,7 +27,7 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(int id_usuario, String nombre, String apellido, Date fechaNacimiento, String usuario, String contra,
+	public Usuario(int id_usuario, String nombre, String apellido, LocalDate fechaNacimiento, String usuario, String contra,
 			String correo) {
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -57,11 +57,11 @@ public class Usuario {
 		this.apellido = apellido;
 	}
 
-	public Date getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

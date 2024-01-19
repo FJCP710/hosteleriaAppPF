@@ -1,5 +1,7 @@
 package com.hosteleria.service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,18 @@ public class UsuarioServiceImpl implements UsuarioService {
 	UsuariosDao dao;
 	
 	@Override
+	public Usuario buscarUsuario(int idUsuario) {
+		Usuario usuario = dao.buscarUsuario(idUsuario);
+		return usuario;
+	}
+	
+	@Override
+	public void eliminarUsuario(int idUsuario) {
+		dao.deleteById(idUsuario);
+		dao.flush();
+	}
+	
+	@Override
 	public void comprobarAltaUsuario(Usuario usuario) {
 		if(dao.comprobarAltaUsuario(usuario.getUsuario(), usuario.getCorreo()).size() == 0) {
 			dao.saveAndFlush(usuario);
@@ -27,4 +41,17 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return nombres;
 	}
 
+	@Override
+	public boolean verificarEdad(int idUsuario) {
+		LocalDate hoy = LocalDate.now();
+		LocalDate fecNac = dao.verificarEdad(idUsuario);
+		Period periodo = Period.between(fecNac, hoy);
+		
+		if(periodo.getYears() >= 18) {
+			return true;
+		}
+		return false;
+	}
+
+	
 }
