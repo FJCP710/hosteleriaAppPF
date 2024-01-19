@@ -2,6 +2,8 @@ package com.hosteleria.service;
 
 import java.util.List;
 
+import org.json.JSONObject;
+
 import com.hosteleria.model.Usuario;
 
 public interface UsuarioService {
@@ -11,4 +13,5 @@ public interface UsuarioService {
 	void comprobarAltaUsuario(Usuario usuario);
 	List<String> buscarNombrePorUsuario(String user);
 	boolean verificarEdad(int idUsuario);
+	void modificarUsuario(JSONObject jsonModificaciones);
 }

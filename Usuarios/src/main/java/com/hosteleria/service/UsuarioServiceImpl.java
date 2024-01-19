@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,5 +54,27 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return false;
 	}
 
-	
+	@Override
+	public void modificarUsuario(JSONObject jsonModificaciones) {
+		String usuario = jsonModificaciones.getString("usuario");
+		String contra = jsonModificaciones.getString("contra");
+		String correo = jsonModificaciones.getString("correo");
+		
+		int id = dao.buscarIdPorCorreo(correo);
+		
+		Usuario user = dao.buscarUsuario(id);
+		
+		if(usuario.isBlank() || usuario.isEmpty()) {
+			usuario = user.getUsuario();
+			
+		} else if (contra.isBlank() || contra.isEmpty()) {
+			contra = user.getContra();
+			
+		}else if(correo.isBlank() || correo.isEmpty()) {
+			correo = user.getCorreo();
+		}
+		
+		dao.actualizarUsuario(usuario, contra, correo, id);
+		
+	}
 }

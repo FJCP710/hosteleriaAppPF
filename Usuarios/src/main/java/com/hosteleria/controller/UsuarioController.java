@@ -2,6 +2,7 @@ package com.hosteleria.controller;
 
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,6 +50,10 @@ public class UsuarioController {
 		return service.verificarEdad(idUsuario);
 	}
 	
-	
+	// localhost:8080/modificar
+ 	@PostMapping(value="/modificar", produces = MediaType.APPLICATION_JSON_VALUE)
+	public void modificarUsuario(@RequestBody JSONObject jsonModificaciones) {
+		service.modificarUsuario(jsonModificaciones);
+	}
 	
 }

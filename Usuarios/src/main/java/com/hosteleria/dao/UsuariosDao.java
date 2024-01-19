@@ -4,10 +4,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.hosteleria.model.Usuario;
+
+import jakarta.transaction.Transactional;
 
 public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 	
@@ -22,4 +25,13 @@ public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 	
 	@Query(value="SELECT u.fecha_nacimiento FROM usuarios u WHERE u.id_usuario = :idUsuario", nativeQuery = true)
 	public LocalDate verificarEdad(@Param("idUsuario") int idUsuario);
+	
+	@Query(value="SELECT u.id_usuario FROM usuarios u WHERE u.correo = :correo", nativeQuery = true)
+	public int buscarIdPorCorreo(@Param("correo") String correo);
+	
+	@Transactional
+	@Modifying
+	@Query(value="UPDATE usuarios SET usuario = :usuario, contra= :contra, correo= :correo WHERE u.id_usuario = :idUsuario", nativeQuery = true)
+	public void actualizarUsuario(@Param("usuario") String usuario, @Param("contra") String contra, @Param("correo") String correo, @Param("idUsuario") int idUsuario);
+	
 }
