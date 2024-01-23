@@ -53,5 +53,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return false;
 	}
 
-	
+	@Override
+	public void modificarUsuarioYContra(String usuario, String contra, String correo) {
+	    Usuario user = dao.buscarUsuarioPorCorreo(correo);
+	    
+	    if(!usuario.isEmpty() && !usuario.isBlank() && usuario != null && !usuario.equals(user.getUsuario())) {
+	    	dao.actualizarUsuarioYContra(usuario, user.getContra(), user.getId_usuario());
+	    }
+	    if(!contra.isEmpty() && !contra.isBlank() && contra != null && !contra.equals(user.getContra())) {
+	    	dao.actualizarUsuarioYContra(user.getUsuario(), contra, user.getId_usuario());
+	    }
+	}
 }

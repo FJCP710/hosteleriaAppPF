@@ -11,4 +11,5 @@ public interface UsuarioService {
 	void comprobarAltaUsuario(Usuario usuario);
 	List<String> buscarNombrePorUsuario(String user);
 	boolean verificarEdad(int idUsuario);
+	void modificarUsuarioYContra(String usuario, String contra, String correo);
 }

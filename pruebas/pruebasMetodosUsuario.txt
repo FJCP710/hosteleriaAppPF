@@ -27,15 +27,10 @@ localhost:8080/usuario?idUsuario=6
 
 
 
-EJEMPLO URL PASADA POR POSTMAN PARA MÉTODO DE BÚSQUEDA DE USUARIO
-localhost:8080/usuario?idUsuario=7
-
-
-
 EJEMPLO URL PASADA POR POSTMAN PARA MÉTODO DE ELIMINADO DE USUARIO
 localhost:8080/borrarUsuario?idUsuario=7
 
 
 
-
-
+EJEMPLO DE URL PASADA POR POSTMAN PARA MÉTODO DE MODIFICACIÓN
+localhost:8080/modificar?usuario=&contra=contra&correo=cor@us.com

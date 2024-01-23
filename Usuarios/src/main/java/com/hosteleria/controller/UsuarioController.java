@@ -49,6 +49,10 @@ public class UsuarioController {
 		return service.verificarEdad(idUsuario);
 	}
 	
-	
-	
+	//localhost:8080/modificarContra
+	@PostMapping(value="/modificar")
+	public void modificar(@RequestParam("usuario") String usuario, @RequestParam("contra") String contra, @RequestParam("correo") String correo) {
+		service.modificarUsuarioYContra(usuario, contra, correo);
+	}
+
 }
