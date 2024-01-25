@@ -24,10 +24,11 @@ DROP TABLE IF EXISTS `restaurante`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `restaurante` (
   `id_restaurante` int NOT NULL AUTO_INCREMENT,
-  `ubicacion` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `ubicacion` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `aforo` int NOT NULL,
-  `reservar_mesa` tinyint NOT NULL,
+  `mesas_disponibles` int NOT NULL,
   `reservar_local` tinyint NOT NULL,
+  `correo` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
   PRIMARY KEY (`id_restaurante`),
   UNIQUE KEY `ubicacion_UNIQUE` (`ubicacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-17 10:19:23
+-- Dump completed on 2024-01-25  9:21:36
