@@ -18,7 +18,8 @@ public class Restaurante {
 	@Column(name="razon_social")
 	private String razonSocial;
 	
-	private String ubicacion;
+	private String calle;
+	private String ciudad;
 	private int aforo;
 	
 	@Column(name="mesas_disponibles")
@@ -33,10 +34,11 @@ public class Restaurante {
 		super();
 	}
 
-	public Restaurante(String nombreComercial, String ubicacion, int aforo, int mesasDisponibles, boolean reservarLocal, String correo) {
+	public Restaurante(String nombreComercial, String calle, String ciudad, int aforo, int mesasDisponibles, boolean reservarLocal, String correo) {
 		super();
 		this.nombreComercial = nombreComercial;
-		this.ubicacion = ubicacion;
+		this.calle = calle;
+		this.ciudad = ciudad;
 		this.aforo = aforo;
 		this.mesasDisponibles = mesasDisponibles;
 		this.reservarLocal = reservarLocal;
@@ -59,12 +61,20 @@ public class Restaurante {
 		this.razonSocial = razonSocial;
 	}
 
-	public String getUbicacion() {
-		return ubicacion;
+	public String getCalle() {
+		return calle;
 	}
 
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion = ubicacion;
+	public void setCalle(String calle) {
+		this.calle = calle;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
 	}
 
 	public int getAforo() {

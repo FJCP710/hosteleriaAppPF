@@ -1,0 +1,16 @@
+MÉTODO PARA DAR DE ALTA RESTAURANTE, JSON PASADO POR POSTMAN:
+localhost:9080/crearRestaurante
+{
+        "id_restaurante": 3,
+        "nombreComercial": "Restaurante Bosque",
+        "razonSocial": "Bosque SL",
+        "calle": "Calle Virgen de los Reyes",
+        "ciudad": "Sevilla",
+        "aforo": 35,
+        "mesasDisponibles": 5,
+        "reservarLocal": true,
+        "correo": "bosque@correo.es"
+}
+
+MÉTODO PARA LISTAR LOS RESTAURANTES POR CIUDAD
+localhost:9080/buscarRestaurantesCiudad?ciudad=sevilla

@@ -1,5 +1,7 @@
 package com.hosteleria.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ public class RestauranteServiceImpl implements RestauranteService {
  		if(!restaurante.getRazonSocial().equals(razonSocial) && !razonSocial.isBlank() && !razonSocial.isEmpty() && razonSocial != null) {
  			dao.saveAndFlush(restaurante);
  		}
+	}
+
+	@Override
+	public List<Restaurante> listadoRestaurantes(String ciudad) {
+		return dao.listadoRestaurantePorCiudad(ciudad);
 	}
 
 }

@@ -26,15 +26,15 @@ CREATE TABLE `restaurante` (
   `id_restaurante` int NOT NULL AUTO_INCREMENT,
   `nombre_comercial` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `razon_social` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `ubicacion` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `calle` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `ciudad` varchar(60) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `aforo` int NOT NULL,
   `mesas_disponibles` int NOT NULL,
   `reservar_local` tinyint NOT NULL,
   `correo` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
   PRIMARY KEY (`id_restaurante`),
-  UNIQUE KEY `ubicacion_UNIQUE` (`ubicacion`),
   UNIQUE KEY `razon_social_UNIQUE` (`razon_social`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `restaurante` (
 
 LOCK TABLES `restaurante` WRITE;
 /*!40000 ALTER TABLE `restaurante` DISABLE KEYS */;
-INSERT INTO `restaurante` VALUES (1,'bar de paco','barPaco','virgen de los reyes 8',50,9,0,'paco@correo.es'),(2,'Restaurante El Jardín','El Jardín S.L.','Calle de la Rosa, 12, 32005 Orense, Galicia / Galiza, España',50,10,0,'jardin@correo.es');
+INSERT INTO `restaurante` VALUES (1,'bar de paco','barPaco','virgen de los reyes 8','Sevilla',50,9,0,'paco@correo.es'),(2,'Restaurante El Jardín','El Jardín S.L.','Calle de la Rosa, 12, 32005 ','Ourense',50,10,0,'jardin@correo.es'),(3,'Restaurante Bosque','Bosque SL','Calle Virgen de los Reyes','Sevilla',35,5,1,'bosque@correo.es');
 /*!40000 ALTER TABLE `restaurante` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-26 11:49:02
+-- Dump completed on 2024-01-26 14:13:49
