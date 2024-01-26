@@ -1,5 +1,9 @@
 package com.hosteleria.service;
 
-public interface RestauranteService {
+import com.hosteleria.model.Restaurante;
 
+public interface RestauranteService {
+	
+	void altaRestaurante(Restaurante restaurante);
+	
 }
