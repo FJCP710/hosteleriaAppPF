@@ -9,5 +9,5 @@ public interface RestauranteService {
 	void altaRestaurante(Restaurante restaurante);
 	ArrayList<Restaurante> listadoRestaurantes(String ciudad);
 	ArrayList<Restaurante> listadoRestaurantesPorCalle(String ciudad, String calle);
-	ArrayList<String> ubicacionRestaurante(String nombre, String ciudad);
+	String ubicacionRestaurante(String nombre, String ciudad);
 }

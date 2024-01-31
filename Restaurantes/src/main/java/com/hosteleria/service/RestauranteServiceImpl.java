@@ -43,19 +43,17 @@ public class RestauranteServiceImpl implements RestauranteService {
 	}
 
 	@Override
-	public ArrayList<String> ubicacionRestaurante(String nombre, String ciudad) {
+	public String ubicacionRestaurante(String nombre, String ciudad) {
 		ArrayList<Restaurante> restaurantesCiudad = dao.listadoRestaurantePorCiudad(ciudad);
-		ArrayList<String> ubicacion = new ArrayList<String>();
 		String ub = null;
 		
 		for(Restaurante ubi : restaurantesCiudad) {
 			if(ubi.getNombreComercial().equals(nombre)) {
 				ub = ubi.getCalle()+" "+ubi.getNumero()+", "+ubi.getCiudad();
-				ubicacion.add(ub);
 			}
 		}
 		
-		return ubicacion;
+		return ub;
 	}
 
 }

@@ -39,7 +39,7 @@ public class RestauranteController {
 	
 	// localhost:9080/ubicacionRestaurante
 	@GetMapping(value="/ubicacionRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ArrayList<String> ubicacionRestaurante(@RequestParam("nombre") String nombre, @RequestParam("ciudad") String ciudad){
+	public String ubicacionRestaurante(@RequestParam("nombre") String nombre, @RequestParam("ciudad") String ciudad){
 		return service.ubicacionRestaurante(nombre, ciudad);
 	}
 	
