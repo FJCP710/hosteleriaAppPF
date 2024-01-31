@@ -19,6 +19,7 @@ public class Restaurante {
 	private String razonSocial;
 	
 	private String calle;
+	private int numero;
 	private String ciudad;
 	private int aforo;
 	
@@ -34,11 +35,12 @@ public class Restaurante {
 		super();
 	}
 
-	public Restaurante(String nombreComercial, String calle, String ciudad, int aforo, int mesasDisponibles, boolean reservarLocal, String correo) {
+	public Restaurante(String nombreComercial, String calle, int numero, String ciudad, int aforo, int mesasDisponibles, boolean reservarLocal, String correo) {
 		super();
 		this.nombreComercial = nombreComercial;
 		this.calle = calle;
 		this.ciudad = ciudad;
+		this.numero = numero;
 		this.aforo = aforo;
 		this.mesasDisponibles = mesasDisponibles;
 		this.reservarLocal = reservarLocal;
@@ -67,6 +69,14 @@ public class Restaurante {
 
 	public void setCalle(String calle) {
 		this.calle = calle;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 
 	public String getCiudad() {

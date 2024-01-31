@@ -12,5 +12,15 @@ localhost:9080/crearRestaurante
         "correo": "bosque@correo.es"
 }
 
+
 MÉTODO PARA LISTAR LOS RESTAURANTES POR CIUDAD
 localhost:9080/buscarRestaurantesCiudad?ciudad=sevilla
+
+
+
+MÉTODO PARA LISTAR LOS RESTAURANTES SEGÚN LA CALLE Y LA CIUDAD
+localhost:9080/restaurantesPorCalle?ciudad=Ourense&calle=Virgen de los Reyes
+
+
+MÉTODO BUSCAR UBICACIÓN DE RESTAURANTE POR NOMBRE Y CIUDAD
+localhost:9080/ubicacionRestaurante?nombre=Restaurante Bosque&ciudad=Sevilla

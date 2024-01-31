@@ -1,6 +1,6 @@
 package com.hosteleria.controller;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,8 +27,20 @@ public class RestauranteController {
 	
 	// localhost:9080/buscarRestaurantesCiudad
 	@GetMapping(value="/buscarRestaurantesCiudad", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Restaurante> buscarRestaurante(@RequestParam("ciudad") String ciudad){
+	public ArrayList<Restaurante> buscarRestaurante(@RequestParam("ciudad") String ciudad){
 		return service.listadoRestaurantes(ciudad);
+	}
+	
+	// localhost:9080/restaurantesPorCalle
+	@GetMapping(value="/restaurantesPorCalle", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ArrayList<Restaurante> listadoRestaurantesPorCalle(@RequestParam("ciudad") String ciudad, @RequestParam("calle") String calle){
+		return service.listadoRestaurantesPorCalle(ciudad, calle);
+	}
+	
+	// localhost:9080/ubicacionRestaurante
+	@GetMapping(value="/ubicacionRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ArrayList<String> ubicacionRestaurante(@RequestParam("nombre") String nombre, @RequestParam("ciudad") String ciudad){
+		return service.ubicacionRestaurante(nombre, ciudad);
 	}
 	
 }

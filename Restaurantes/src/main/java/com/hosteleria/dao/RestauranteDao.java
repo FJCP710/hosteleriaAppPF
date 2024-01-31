@@ -1,6 +1,6 @@
 package com.hosteleria.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,5 +14,5 @@ public interface RestauranteDao extends JpaRepository<Restaurante, Integer> {
 	public String comprobarExistenciaRestaurante(@Param("razonSocial") String razonSocial);
 	
 	@Query(value="SELECT * FROM restaurante r WHERE r.ciudad = :ciudad", nativeQuery = true)
-	public List<Restaurante> listadoRestaurantePorCiudad(@Param("ciudad") String ciudad);
+	public ArrayList<Restaurante> listadoRestaurantePorCiudad(@Param("ciudad") String ciudad);
 }
