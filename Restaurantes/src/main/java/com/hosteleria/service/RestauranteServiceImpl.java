@@ -16,11 +16,11 @@ public class RestauranteServiceImpl implements RestauranteService {
 	
 	@Override
 	public void altaRestaurante(Restaurante restaurante) {
-		String razonSocial = dao.comprobarExistenciaRestaurante(restaurante.getRazonSocial());
+		int existeRazon = dao.comprobarExistenciaRestaurante(restaurante.getRazonSocial());
 		
- 		if(!restaurante.getRazonSocial().equals(razonSocial) && !razonSocial.isBlank() && !razonSocial.isEmpty() && razonSocial != null) {
- 			dao.saveAndFlush(restaurante);
- 		}
+		if(existeRazon == 0) {
+			dao.saveAndFlush(restaurante);
+		}
 	}
 
 	@Override
@@ -56,4 +56,22 @@ public class RestauranteServiceImpl implements RestauranteService {
 		return ub;
 	}
 
+	@Override
+	public void bajaRestaurante(Restaurante restaurante) {
+		
+		Restaurante res = dao.buscarRestaurantePorRazonSocial(restaurante.getRazonSocial());
+		String ubiRestaurante = restaurante.getCalle()+" "+restaurante.getNumero()+", "+restaurante.getCiudad();
+		
+		
+		if(res != null) {
+			String ubiRes = ubicacionRestaurante(res.getNombreComercial(), res.getCiudad());
+			
+			if(restaurante.getRazonSocial().equals(res.getRazonSocial()) && restaurante.getNombreComercial().equals(res.getNombreComercial())) {
+				if(ubiRes.equals(ubiRestaurante) && restaurante.getCorreo().equals(res.getCorreo())) {
+					dao.deleteById(res.getId_restaurante());
+					dao.flush();
+				}
+			}
+		}
+	}
 }

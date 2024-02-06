@@ -43,4 +43,10 @@ public class RestauranteController {
 		return service.ubicacionRestaurante(nombre, ciudad);
 	}
 	
+	// localhost:9080/bajaRestaurante
+	@PostMapping(value="/bajaRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
+	public void bajaRestaurante(@RequestBody Restaurante restaurante) {
+		service.bajaRestaurante(restaurante);
+	}
+	
 }

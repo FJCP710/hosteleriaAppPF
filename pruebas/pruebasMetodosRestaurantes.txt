@@ -24,3 +24,17 @@ localhost:9080/restaurantesPorCalle?ciudad=Ourense&calle=Virgen de los Reyes
 
 MÉTODO BUSCAR UBICACIÓN DE RESTAURANTE POR NOMBRE Y CIUDAD
 localhost:9080/ubicacionRestaurante?nombre=Restaurante Bosque&ciudad=Sevilla
+
+MÉTODO PARA DAR DE BAJA UN RESTAURANTE
+localhost:9080/bajaRestaurante
+{
+        "nombreComercial": "prueba",
+        "razonSocial": "prueba",
+        "calle": "prueba",
+        "numero": 0,
+        "ciudad": "Sevilla",
+        "aforo": 35,
+        "mesasDisponibles": 5,
+        "reservarLocal": true,
+        "correo": "prueba2@correo.es"
+}
