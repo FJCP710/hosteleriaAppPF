@@ -62,7 +62,6 @@ public class RestauranteServiceImpl implements RestauranteService {
 		Restaurante res = dao.buscarRestaurantePorRazonSocial(restaurante.getRazonSocial());
 		String ubiRestaurante = restaurante.getCalle()+" "+restaurante.getNumero()+", "+restaurante.getCiudad();
 		
-		
 		if(res != null) {
 			String ubiRes = ubicacionRestaurante(res.getNombreComercial(), res.getCiudad());
 			
@@ -71,6 +70,53 @@ public class RestauranteServiceImpl implements RestauranteService {
 					dao.deleteById(res.getId_restaurante());
 					dao.flush();
 				}
+			}
+		}
+	}
+
+	
+	@Override
+	public void modificarRestaurante(Restaurante restaurante) {
+		
+		Restaurante res = dao.buscarRestaurantePorRazonSocial(restaurante.getRazonSocial());
+		
+		if(res != null) {
+			if(restaurante.getCorreo().equals(res.getCorreo())) {
+				if(!restaurante.getNombreComercial().equals(res.getNombreComercial())) {
+					res.setNombreComercial(restaurante.getNombreComercial());
+					dao.save(res);
+				}
+				
+				if(!restaurante.getCalle().equals(res.getCalle())) {
+					res.setCalle(restaurante.getCalle());
+					dao.save(res);
+				}
+				
+				if(restaurante.getNumero() != res.getNumero()) {
+					res.setNumero(restaurante.getNumero());
+					dao.save(res);
+				}
+				
+				if(!restaurante.getCiudad().equals(res.getCiudad())) {
+					res.setCiudad(restaurante.getCiudad());
+					dao.save(res);
+				}
+				
+				if(restaurante.getAforo() != res.getAforo()) {
+					res.setAforo(restaurante.getAforo());
+					dao.save(res);
+				}
+				
+				if(restaurante.getMesasDisponibles() != res.getMesasDisponibles()) {
+					res.setMesasDisponibles(restaurante.getMesasDisponibles());
+					dao.save(res);
+				}
+				
+				if(restaurante.isReservarLocal() != res.isReservarLocal()) {
+					res.setReservarLocal(restaurante.isReservarLocal());
+					dao.save(res);
+				}
+				dao.flush();
 			}
 		}
 	}

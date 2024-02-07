@@ -49,4 +49,9 @@ public class RestauranteController {
 		service.bajaRestaurante(restaurante);
 	}
 	
+	// localhost:9080/modificarRestaurante
+	@PostMapping(value="/modificarRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
+	public void modificarRestaurante(@RequestBody Restaurante restaurante) {
+		service.modificarRestaurante(restaurante);
+	}
 }
