@@ -1,3 +1,11 @@
+campo string que sea como planta, portal, escalera, etc.
+código postal
+
+ACTUALIZAR LA BD EN GITHUB
+
+
+==================================================================
+
 MÉTODO PARA DAR DE ALTA RESTAURANTE, JSON PASADO POR POSTMAN:
 localhost:9080/crearRestaurante
 {
