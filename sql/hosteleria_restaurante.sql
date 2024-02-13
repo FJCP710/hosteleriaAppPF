@@ -35,7 +35,7 @@ CREATE TABLE `restaurante` (
   `correo` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
   PRIMARY KEY (`id_restaurante`),
   UNIQUE KEY `razon_social_UNIQUE` (`razon_social`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `restaurante` (
 
 LOCK TABLES `restaurante` WRITE;
 /*!40000 ALTER TABLE `restaurante` DISABLE KEYS */;
-INSERT INTO `restaurante` VALUES (1,'bar de paco','barPaco','Virgen de los Reyes',2,'Sevilla',50,9,0,'paco@correo.es'),(2,'Restaurante El Jardín','El Jardín S.L.','Calle de la Rosa',3,'Ourense',50,10,0,'jardin@correo.es'),(3,'Restaurante Bosque','Bosque SL','Virgen de los Reyes',6,'Sevilla',35,5,1,'bosque@correo.es'),(9,'bar Mari','Mari SA','Virgen de los Reyes',8,'Ourense',25,8,1,'mari@correo.es'),(10,'Restaurante CarneRes','Res Res','Calle Agua',9,'Sevilla',10,5,0,'res@correo.es'),(11,'BarJose','Jose A','Calle Monica',11,'Sevilla',42,7,1,'jose@correo.es');
+INSERT INTO `restaurante` VALUES (1,'bar de paco','barPaco','Virgen de los Reyes',2,'Sevilla',50,9,0,'paco@correo.es'),(2,'Restaurante El Jardín','El Jardín S.L.','Calle de la Rosa',3,'Ourense',50,10,0,'jardin@correo.es'),(3,'Restaurante Bosque','Bosque SL','Virgen de los Reyes',6,'Sevilla',35,5,1,'bosque@correo.es'),(4,'bar Mari','Mari SA','Virgen de los Reyes',8,'Ourense',25,8,1,'mari@correo.es'),(5,'Restaurante CarneRes','Res Res','Calle Agua',9,'Sevilla',10,5,0,'res@correo.es'),(6,'BarJose','Jose A','Calle Monica',11,'Sevilla',42,7,1,'jose@correo.es'),(14,'prueba2','prueba','prueba',2,'Sevilla',22,2,0,'prueba@correo.es');
 /*!40000 ALTER TABLE `restaurante` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-31 10:18:17
+-- Dump completed on 2024-02-12 10:11:45
