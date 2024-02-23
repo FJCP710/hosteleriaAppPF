@@ -28,12 +28,13 @@ CREATE TABLE `reserva` (
   `id_usuario` int NOT NULL,
   `nombre_reserva` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `num_personas` int NOT NULL,
+  `fecha` datetime NOT NULL,
   PRIMARY KEY (`id_reserva`),
   KEY `idusuario_idx` (`id_usuario`),
   KEY `idrestaurante_idx` (`id_restaurante`),
   CONSTRAINT `idrestaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurante` (`id_restaurante`),
   CONSTRAINT `idusuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +43,7 @@ CREATE TABLE `reserva` (
 
 LOCK TABLES `reserva` WRITE;
 /*!40000 ALTER TABLE `reserva` DISABLE KEYS */;
+INSERT INTO `reserva` VALUES (1,1,1,'nom1',2,'2017-06-15 00:00:00'),(2,1,2,'nom2',3,'2018-07-17 00:00:00'),(3,2,1,'nom12',4,'2020-01-20 00:00:00'),(4,2,3,'nom3',6,'2022-11-23 00:00:00'),(5,1,1,'nom121',5,'2023-12-20 00:00:00'),(9,2,2,'Resr',4,'2024-03-12 14:16:02'),(12,1,1,'Reserva2',4,'2024-03-21 14:16:02');
 /*!40000 ALTER TABLE `reserva` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-17 10:19:23
+-- Dump completed on 2024-02-23 16:47:26

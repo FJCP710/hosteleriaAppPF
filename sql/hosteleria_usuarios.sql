@@ -30,8 +30,10 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `contra` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `correo` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `usuario_UNIQUE` (`usuario`),
+  UNIQUE KEY `correo_UNIQUE` (`correo`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +42,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'nom1','apel1','1999-09-09','us','contra','cor@us.com'),(2,'nom2','apel2','1988-10-10','us2','contra2233','cor2@us.com'),(3,'Juan','Pérez','1990-01-01','us3','contraseña123','cor3@us.com'),(4,'José','García','1998-11-04','us4','contraseña123','cor4@us.com'),(5,'Carlos','García','2000-05-04','us5','contraseña123','cor5@us.com'),(6,'Antonio','Jiménez','2007-12-30','us6','contraseña123','cor6@us.com');
+INSERT INTO `usuarios` VALUES (1,'nom1','apel1','1999-09-09','us','contra','cor@us.com'),(2,'nom2','apel2','1988-10-10','us2','contra2233','cor2@us.com'),(3,'Juan','Pérez','1990-01-01','us3','contraseña123','cor3@us.com'),(4,'José','García','1998-11-04','us4','contraseña123','cor4@us.com'),(5,'Carlos','García','2000-05-04','us5','contraseña123','cor5@us.com'),(6,'Antonio','Jiménez','2007-12-30','us6','contraseña123','cor6@us.com'),(8,'nom77','apel7','1977-07-07','us7','contra7','cor7@us.com');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-23 15:41:08
+-- Dump completed on 2024-02-23 16:47:26

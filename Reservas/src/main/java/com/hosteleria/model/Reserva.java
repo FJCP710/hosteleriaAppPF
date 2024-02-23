@@ -1,6 +1,6 @@
 package com.hosteleria.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,13 +26,13 @@ public class Reserva {
 	@Column(name="num_personas")
 	private int numPersonas;
 	
-	private Date fecha;
+	private LocalDateTime fecha;
 
 	public Reserva() {
 		super();
 	}
 
-	public Reserva(int idRestaurante, int idUsuario, String nombreReserva, int numPersonas, Date fecha) {
+	public Reserva(int idRestaurante, int idUsuario, String nombreReserva, int numPersonas, LocalDateTime fecha) {
 		super();
 		this.idRestaurante = idRestaurante;
 		this.idUsuario = idUsuario;
@@ -77,11 +77,11 @@ public class Reserva {
 		return idReserva;
 	}
 
-	public Date getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 	
