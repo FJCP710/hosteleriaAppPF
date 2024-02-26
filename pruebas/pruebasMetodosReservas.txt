@@ -1,0 +1,39 @@
+
+MÉTODO PARA DAR DE ALTA RESERVA, JSON PASADO POR POSTMAN:
+localhost:9090/crearReserva
+
+{
+    "idRestaurante": 1,
+    "idUsuario": 1,
+    "nombreReserva": "Reserva2",
+    "numPersonas": 4,
+    "fecha": "2024-03-21T14:16:02"
+}
+
+MÉTODO PARA LISTAR RESERVAS POR RESTAURANTES:
+localhost:9090/listarPorRestaurante
+
+MÉTODO PARA LISTAR RESERVAS POR USUARIOS:
+localhost:9090/listarPorUsuario
+
+MÉTODO PARA ELIMINAR RESERVA:
+localhost:9090/eliminarReserva
+
+{
+    "idRestaurante": 1,
+    "idUsuario": 1,
+    "nombreReserva": "Reserva2",
+    "numPersonas": 4,
+    "fecha": "2024-03-21T14:16:02"
+}
+
+MÉTODO PARA MODIFICAR RESERVA:
+localhost:9090/modificarReserva
+
+{
+    "idRestaurante": 1,
+    "idUsuario": 1,
+    "nombreReserva": "Reserva2",
+    "numPersonas": 4,
+    "fecha": "2024-03-21T14:16:02"
+}
