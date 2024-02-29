@@ -26,7 +26,7 @@ CREATE TABLE `promociones` (
   `id_promociones` int NOT NULL AUTO_INCREMENT,
   `id_restaurante` int NOT NULL,
   `id_producto` int NOT NULL,
-  `porcentaje` int NOT NULL,
+  `porcentaje` double NOT NULL,
   `precio_min` double DEFAULT NULL,
   `productos_rebajados` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
   PRIMARY KEY (`id_promociones`),
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-23 16:47:27
+-- Dump completed on 2024-02-27 11:58:35
