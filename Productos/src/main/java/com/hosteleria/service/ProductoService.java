@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import com.hosteleria.model.Producto;
 
 public interface ProductoService {
-	void crearProducto();
-	void modificarProducto();
-	void eliminarProducto();
-	ArrayList<Producto> listaProductosPrecioMayor();
-	ArrayList<Producto> listaProductosPrecioMeno();
+	void crearProducto(Producto producto);
+	void modificarProducto(Producto producto);
+	void eliminarProducto(Producto producto);
+	ArrayList<Producto> listaProductosPrecioMayor(double precio);
+	ArrayList<Producto> listaProductosPrecioMeno(double precio);
 }
