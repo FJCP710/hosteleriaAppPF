@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Aplicación</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../logo.png" alt="Logo" id="logo">
+        <div>
+            <button onclick="window.location.href='./seleccionRegistro.html'">Registro</button>
+            <button onclick="window.location.href='./seleccionInicio.html'">Inicio de sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <input type="text" id="localidad" placeholder="Escribe una localidad" pattern="[A-Za-z\s]*">
+        <input type="text" id="calle" placeholder="Escribe una calle">
+        <button id="botonBuscar">Buscar</button>
+
+        <h2>Restaurantes en Sevilla</h2>
+        <ul id="restaurantes">
+        </ul>
+        <ul id="calles">
+        </ul>
+    </main>
+
+    <footer>
+        <p>© 2024 Reservas y Promociones. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

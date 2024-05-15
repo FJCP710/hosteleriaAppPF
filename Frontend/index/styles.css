@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    min-height: 100vh;
+    background-color: #FDFCF5;
+    color: #5a442a;
+}
+
+#logo {
+    height: 70px;
+}
+
+header {
+    background-color: #cda589;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Asegura que el encabezado se extienda a lo ancho de la página */
+    position: absolute; /* Posiciona el encabezado en la parte superior de la página */
+    top: 0; /* Alinea el encabezado con la parte superior de la página */
+}
+
+main {
+    margin: 20px;
+}
+
+footer {
+    background-color: #cda589;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    color: #ffffff;
+    width: 100%; /* Asegura que el pie de página se extienda a lo ancho de la página */
+    position: absolute; /* Posiciona el pie de página en la parte inferior de la página */
+    bottom: 0; /* Alinea el pie de página con la parte inferior de la página */
+}
+
+header button, div button {
+    background-color: #5a442a; /* Color de fondo del botón */
+    color: #FDFCF5; /* Color del texto del botón */
+    border: none; /* Elimina el borde predeterminado */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Elimina el subrayado */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    border-radius: 8px; /* Esquinas redondeadas */
+}
+
+header button:hover, div button:hover {
+    background-color: #3e8e41; /* Cambia el color de fondo al pasar el ratón */
+    color: white; /* Cambia el color del texto al pasar el ratón */
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
