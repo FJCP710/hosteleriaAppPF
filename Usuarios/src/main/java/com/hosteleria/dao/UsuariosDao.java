@@ -28,6 +28,9 @@ public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 	@Query(value="SELECT * FROM usuarios u WHERE u.correo = :correo", nativeQuery = true)
 	public Usuario buscarUsuarioPorCorreo(@Param("correo") String correo);
 	
+	@Query(value="SELECT CASE WHEN EXISTS (SELECT * FROM usuarios u WHERE u.correo = :correo AND u.contra = :contra) THEN TRUE ELSE FALSE END", nativeQuery = true)
+	public boolean comprobarCorreoYContra(@Param("correo") String correo, @Param("contra") String contra);
+	
 	@Transactional
 	@Modifying
 	@Query(value="UPDATE usuarios u SET u.usuario = :usuario, u.contra = :contra WHERE u.id_usuario = :idUsuario", nativeQuery = true)

@@ -64,4 +64,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	    	dao.actualizarUsuarioYContra(user.getUsuario(), contra, user.getId_usuario());
 	    }
 	}
+
+	@Override
+	public boolean comprobarCorreoYContra(String correo, String contra) {
+			
+		return dao.comprobarCorreoYContra(correo, contra);
+	}
 }

@@ -56,5 +56,11 @@ public class UsuarioController {
 	public void modificar(@RequestParam("usuario") String usuario, @RequestParam("contra") String contra, @RequestParam("correo") String correo) {
 		service.modificarUsuarioYContra(usuario, contra, correo);
 	}
+	
+	//localhost:8080/inicioSesion
+	@GetMapping(value="/inicioSesion")
+	public boolean comprobarCorreoYContra(String correo, String contra) {
+		return service.comprobarCorreoYContra(correo, contra);
+	}
 
 }
