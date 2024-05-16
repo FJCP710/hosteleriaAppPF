@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" type="text/css" href="../index/styles.css">
-    <script src="script.js" defer></script>
+    <script src="registro.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,7 +17,23 @@
         </div>
     </header>
 
-    
+    <main>
+        <form id="registroForm">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido"><br>
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
+            <label for="usuario">Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario"><br>
+            <label for="contraseña">Contraseña:</label><br>
+            <input type="password" id="contraseña" name="contraseña"><br>
+            <label for="correo">Correo Electrónico:</label><br>
+            <input type="email" id="correo" name="correo"><br>
+            <input type="button" value="Registrarse" onclick="submitForm()">
+        </form>
+    </main>
 
     <footer>
         <p>© 2024 Reservas y Promociones. Todos los derechos reservados.</p>
