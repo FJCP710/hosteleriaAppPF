@@ -26,15 +26,14 @@ CREATE TABLE `promociones` (
   `id_promociones` int NOT NULL AUTO_INCREMENT,
   `id_restaurante` int NOT NULL,
   `id_producto` int NOT NULL,
-  `porcentaje` double NOT NULL,
+  `porcentaje` double DEFAULT NULL,
   `precio_min` double DEFAULT NULL,
-  `productos_rebajados` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
   PRIMARY KEY (`id_promociones`),
   KEY `id_restaurante_idx` (`id_restaurante`),
   KEY `id_producto_idx` (`id_producto`),
   CONSTRAINT `id_producto` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
   CONSTRAINT `id_restaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurante` (`id_restaurante`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +42,7 @@ CREATE TABLE `promociones` (
 
 LOCK TABLES `promociones` WRITE;
 /*!40000 ALTER TABLE `promociones` DISABLE KEYS */;
+INSERT INTO `promociones` VALUES (1,1,1,3,NULL),(2,1,2,NULL,4),(3,3,2,NULL,3),(4,3,4,4.2,NULL),(5,2,2,NULL,5),(6,2,6,6.3,NULL),(7,4,4,NULL,4),(8,4,6,8.2,NULL);
 /*!40000 ALTER TABLE `promociones` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-27 11:58:35
+-- Dump completed on 2024-05-16 13:23:20

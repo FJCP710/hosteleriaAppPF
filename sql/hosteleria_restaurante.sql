@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `restaurante`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `restaurante` (
   `id_restaurante` int NOT NULL AUTO_INCREMENT,
-  `nombre_comercial` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `razon_social` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `nombre_comercial` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `razon_social` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `calle` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `numero` int NOT NULL,
-  `ciudad` varchar(60) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `ciudad` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `aforo` int NOT NULL,
   `mesas_disponibles` int NOT NULL,
   `reservar_local` tinyint NOT NULL,
-  `correo` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `correo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   PRIMARY KEY (`id_restaurante`),
   UNIQUE KEY `razon_social_UNIQUE` (`razon_social`),
   UNIQUE KEY `correo_UNIQUE` (`correo`)
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-23 16:47:27
+-- Dump completed on 2024-05-16 13:23:21
