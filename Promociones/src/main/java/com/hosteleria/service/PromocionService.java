@@ -8,5 +8,5 @@ public interface PromocionService {
 	void crearPromocion(Promocion promocion);
 	void modificarPromocion(Promocion promocion);
 	void eliminarPromocion(Promocion promocion);
-	ArrayList<Promocion> listarPromocionesPorRestaurante();
+	ArrayList<Promocion> listarPromocionesPorRestaurante(int idRestaurante);
 }

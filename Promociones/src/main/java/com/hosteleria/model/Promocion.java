@@ -33,12 +33,10 @@ public class Promocion {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Promocion(int idRestaurante, int idProducto, ArrayList<String> productosRebajados,
-			int porcentaje, double precionMin) {
+	public Promocion(int idRestaurante, int idProducto,	int porcentaje, double precionMin) {
 		super();
 		this.idRestaurante = idRestaurante;
 		this.idProducto = idProducto;
-		this.productosRebajados = productosRebajados;
 		this.porcentaje = porcentaje;
 		this.precionMin = precionMin;
 	}

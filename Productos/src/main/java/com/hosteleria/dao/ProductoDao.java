@@ -13,7 +13,7 @@ public interface ProductoDao extends JpaRepository<Producto, Integer> {
 	@Query(value="SELECT COUNT(*) FROM producto p WHERE p.nombre = :nombre AND p.precio = :precio", nativeQuery = true)
 	public int comprobarExistenciaProducto(@Param("nombre") String nombre, @Param("precio") double precio);	
 	
-	@Query(value="SELECT * FROM producto p WHERE p.nombre = :nombre AND p.precio = :precio AND p.dimension", nativeQuery = true)
+	@Query(value="SELECT * FROM producto p WHERE p.nombre = :nombre AND p.precio = :precio AND p.dimension = :dimension", nativeQuery = true)
 	public Producto buscarProducto(@Param("nombre") String nombre, @Param("precio") double precio, @Param("dimension") String dimension);
 	
 	@Query(value="SELECT * FROM producto p WHERE p.precio >= :precio BY p.precio DESC", nativeQuery = true)
