@@ -120,4 +120,10 @@ public class RestauranteServiceImpl implements RestauranteService {
 			}
 		}
 	}
+
+	@Override
+	public boolean comprobarCorreoYContra(String correo, String contra) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

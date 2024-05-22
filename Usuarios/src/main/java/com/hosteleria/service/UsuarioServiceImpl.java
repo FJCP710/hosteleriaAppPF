@@ -67,7 +67,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public boolean comprobarCorreoYContra(String correo, String contra) {
-			
-		return dao.comprobarCorreoYContra(correo, contra);
+		if(dao.comprobarCorreoYContra(correo, contra) == true) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

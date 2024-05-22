@@ -1,6 +1,7 @@
 package com.hosteleria.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -58,9 +59,12 @@ public class UsuarioController {
 	}
 	
 	//localhost:8080/inicioSesion
-	@GetMapping(value="/inicioSesion")
-	public boolean comprobarCorreoYContra(String correo, String contra) {
-		return service.comprobarCorreoYContra(correo, contra);
+	@PostMapping(value="/inicioSesion")
+	public boolean comprobarCorreoYContra(@RequestBody Map<String, String> credenciales) {
+	    String correo = credenciales.get("correo");
+	    String contra = credenciales.get("contra");
+	    return service.comprobarCorreoYContra(correo, contra);
 	}
+
 
 }

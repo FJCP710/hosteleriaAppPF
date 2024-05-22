@@ -18,4 +18,7 @@ public interface RestauranteDao extends JpaRepository<Restaurante, Integer> {
 	
 	@Query(value="SELECT * FROM restaurante r WHERE r.razon_social = :razonSocial", nativeQuery = true)
 	public Restaurante buscarRestaurantePorRazonSocial(@Param("razonSocial") String razonSocial);
+	
+	@Query(value="SELECT CASE WHEN EXISTS (SELECT * FROM restaurante r WHERE r.correo = :correo AND r.contra = :contra) THEN TRUE ELSE FALSE END", nativeQuery = true)
+	public boolean comprobarCorreoYContra(@Param("correo") String correo, @Param("contra") String contra);
 }

@@ -12,4 +12,5 @@ public interface RestauranteService {
 	String ubicacionRestaurante(String nombre, String ciudad);
 	void bajaRestaurante(Restaurante restaurante);
 	void modificarRestaurante(Restaurante restaurante);
+	boolean comprobarCorreoYContra(String correo, String contra);
 }
