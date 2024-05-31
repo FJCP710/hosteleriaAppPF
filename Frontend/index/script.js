@@ -20,6 +20,7 @@ function buscarRestaurantes(ciudad, calle = '') {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            document.querySelector('main h2').innerText = `Restaurantes en ${ciudad}`;
             let restaurantes = document.getElementById('restaurantes');
 
             restaurantes.innerHTML = '';
