@@ -29,7 +29,7 @@ public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 	public Usuario buscarUsuarioPorCorreo(@Param("correo") String correo);
 	
 	@Query(value="SELECT CASE WHEN EXISTS (SELECT * FROM usuarios u WHERE u.correo = :correo AND u.contra = :contra) THEN TRUE ELSE FALSE END", nativeQuery = true)
-	public boolean comprobarCorreoYContra(@Param("correo") String correo, @Param("contra") String contra);
+	public Long comprobarCorreoYContra(@Param("correo") String correo, @Param("contra") String contra);
 	
 	@Transactional
 	@Modifying

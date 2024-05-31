@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hosteleria.model.Usuario;
 import com.hosteleria.service.UsuarioService;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class UsuarioController {
 	
@@ -47,7 +47,7 @@ public class UsuarioController {
 	}
 	
 	// localhost:8080/edad
-	@GetMapping(value="/edad")
+	@GetMapping(value="/edad", produces = MediaType.APPLICATION_JSON_VALUE)
 	public boolean verificarEdad(@RequestParam("idUsuario") int idUsuario) {
 		return service.verificarEdad(idUsuario);
 	}
@@ -59,12 +59,13 @@ public class UsuarioController {
 	}
 	
 	//localhost:8080/inicioSesion
-	@PostMapping(value="/inicioSesion")
-	public boolean comprobarCorreoYContra(@RequestBody Map<String, String> credenciales) {
-	    String correo = credenciales.get("correo");
-	    String contra = credenciales.get("contra");
+	@PostMapping(value="/inicioSesion", produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean comprobarCorreoYContra(@RequestBody Map<String, String> datos) {
+	    String correo = datos.get("correo");
+	    String contra = datos.get("contra");
 	    return service.comprobarCorreoYContra(correo, contra);
 	}
+
 
 
 }
