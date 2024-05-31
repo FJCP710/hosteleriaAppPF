@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" type="text/css" href="../index/styles.css">
-    <script src="inicio.js" defer></script>
+    <script type="module" src="./inicio.js"></script>
+
 </head>
 <body>
     <header>
         <img src="../logo.png" alt="Logo" id="logo">
         <div>
-            <button onclick="window.location.href='../index/registro.html'">Registro</button>
+            <button onclick="window.location.href='../index/seleccionRegistro.html'">Registro</button>
             <button onclick="window.location.href='../index/index.html'">Volver al inicio</button>
         </div>
     </header>
 
     <main>
         <form id="loginForm">
-            <label for="correo">Correo Electrónico / Usuario:</label><br>
+            <label for="correo">Correo Electrónico:</label><br>
             <input type="text" id="correo" name="correo"><br>
             <label for="contra">Contraseña:</label><br>
             <input type="password" id="contra" name="contra"><br>
-            <input type="button" value="Iniciar Sesión" onclick="submitForm()">
+            <input type="button" value="Iniciar Sesión" id="loginButton">
         </form>
     </main>
 
