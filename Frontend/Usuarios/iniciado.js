@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     buscarRestaurantes('Sevilla');
+
+    
 });
 
 let botonBuscar = document.getElementById('botonBuscar');
@@ -38,7 +40,88 @@ function buscarRestaurantes(ciudad, calle = '') {
                 li.textContent = restaurante.nombreComercial +" ";
                 restaurantes.appendChild(li);
                 li.appendChild(res);
+                li.setAttribute("onclick", `reservar('${restaurante.razonSocial}');`);
             });
         })
         .catch(error => console.error('Error:', error));
+}
+
+function reservar(razonSocial) {
+    document.getElementById('reservation_section').style.display = 'block';
+
+    var now = new Date(),
+    minDateTime = now.toISOString().substring(0,16);
+    document.getElementById('reservation_datetime').min = minDateTime;
+    
+    document.getElementById('reservation_form').addEventListener('submit', function(event){
+        event.preventDefault();
+      
+        var nombreReserva = document.getElementById('reservation_name').value;
+        var numPersonas = document.getElementById('num_people').value;
+        var fecha = document.getElementById('reservation_datetime').value;
+    
+
+        const regex = /correo=([^&]+)/;
+        const match = document.cookie.match(regex);
+        let correo;
+        if (match) {
+            correo = match[1];
+            console.log(correo);
+        }
+
+
+        let urlIdCorreo = `http://localhost:8080/idPorCorreo?correo=${correo}`;
+        let urlIdRestaurante = `http://localhost:9080/cogerIdPorRazonSocial?razonSocial=${razonSocial}`;
+
+        Promise.all([
+            fetch(urlIdCorreo, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json()),
+            fetch(urlIdRestaurante,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+        ])
+        .then(([idUsuario, idRestaurante]) => {
+
+            console.log('Datos del primer fetch:', idUsuario);
+            console.log('Datos del segundo fetch:', idRestaurante);
+            var reserva = {
+                idUsuario: idUsuario,
+                idRestaurante: idRestaurante,
+                nombreReserva: nombreReserva,
+                numPersonas: numPersonas,
+                fecha: fecha
+              };
+            console.log("Datos combinados", reserva)
+
+            let urlReserva = `http://localhost:9090/crearReserva`;
+
+            return fetch(urlReserva, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(reserva)
+            })
+        })
+        .then(data3 => {
+            alert("Reserva creada con éxito");
+        })
+        .catch(error => {
+            alert("La reserva no ha podido ser creada");
+            console.error('Error:', error);
+        });
+
+        var reservationSection = document.getElementById('reservation_section');
+        var reservationTitle = document.getElementById('reservation_title');
+
+        reservationSection.style.backgroundColor = 'lightgrey';
+        reservationTitle.style.color = 'blue';
+    });
 }

@@ -12,6 +12,7 @@
         <img src="../logo.png" alt="Logo" id="logo">
         <div>
             <button id="cierre">Cerrar sesión</button>
+            <button onclick="window.location='reservas.html'">Reservas</button>
         </div>
     </header>
 
@@ -23,6 +24,21 @@
         <h2>Restaurantes en Sevilla</h2>
         <ul id="restaurantes">
         </ul>
+
+        <div id="reservation_section" style="display: none;">
+            <h3>Formulario de Reserva</h3>
+          
+            <form id="reservation_form">
+              <label for="reservation_name">Nombre de la Reserva:</label><br>
+              <input type="text" id="reservation_name" name="reservation_name" required><br>
+              <label for="num_people">Número de Personas:</label><br>
+              <input type="number" id="num_people" name="num_people" min="1" required><br>
+              <label for="reservation_datetime">Fecha y Hora de la Reserva:</label><br>
+              <input type="datetime-local" id="reservation_datetime" name="reservation_datetime" min="2024-06-03T00:00" required><br>
+              <input type="submit" value="Enviar">
+            </form>
+          </div>
+
     </main>
 
     <footer>
