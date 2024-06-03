@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hosteleria.model.Restaurante;
 import com.hosteleria.service.RestauranteService;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class RestauranteController {
 
@@ -56,5 +57,11 @@ public class RestauranteController {
 	@PostMapping(value="/modificarRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void modificarRestaurante(@RequestBody Restaurante restaurante) {
 		service.modificarRestaurante(restaurante);
+	}
+	
+	//localhost:9080/cogerIdPorRazonSocial
+	@PostMapping(value="/cogerIdPorRazonSocial", produces = MediaType.APPLICATION_JSON_VALUE)
+	public int cogerIdPorNombreCalleCiudad(@RequestParam("razonSocial") String razonSocial) {
+		return service.cogerIdPorRazonSocial(razonSocial);
 	}
 }

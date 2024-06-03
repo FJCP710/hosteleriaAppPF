@@ -66,6 +66,12 @@ public class UsuarioController {
 	    return service.comprobarCorreoYContra(correo, contra);
 	}
 
-
+	
+	//localhost:8080/idPorCorreo
+	@PostMapping(value="/idPorCorreo", produces = MediaType.APPLICATION_JSON_VALUE)
+	public int cogerIdPorCorreo(@RequestParam("correo") String correo) {
+		return service.cogerIdPorCorreo(correo);
+	}
+	
 
 }

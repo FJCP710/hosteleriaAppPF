@@ -36,5 +36,6 @@ public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 	@Query(value="UPDATE usuarios u SET u.usuario = :usuario, u.contra = :contra WHERE u.id_usuario = :idUsuario", nativeQuery = true)
 	public void actualizarUsuarioYContra(@Param("usuario") String usuario, @Param("contra") String contra, @Param("idUsuario") int idUsuario);
 
-	
+	@Query(value="SELECT u.id_usuario FROM usuarios u WHERE u.correo = :correo", nativeQuery = true)
+	public int cogerIdPorCorreo(@Param("correo") String correo);
 }

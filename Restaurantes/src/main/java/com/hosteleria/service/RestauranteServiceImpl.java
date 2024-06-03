@@ -121,9 +121,14 @@ public class RestauranteServiceImpl implements RestauranteService {
 		}
 	}
 
+//	@Override
+//	public boolean comprobarCorreoYContra(String correo, String contra) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+
 	@Override
-	public boolean comprobarCorreoYContra(String correo, String contra) {
-		// TODO Auto-generated method stub
-		return false;
+	public int cogerIdPorRazonSocial(String nombreComercial) {
+		return dao.cogerIdPorRazonSocial(nombreComercial);
 	}
 }

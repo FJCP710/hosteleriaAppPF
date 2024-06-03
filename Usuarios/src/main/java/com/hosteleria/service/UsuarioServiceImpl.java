@@ -70,4 +70,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 		Long existe = dao.comprobarCorreoYContra(correo, contra);
 	    return existe != 0;
 	}
+
+	@Override
+	public int cogerIdPorCorreo(String correo) {
+		
+		return dao.cogerIdPorCorreo(correo);
+	}
+	
+	
 }
