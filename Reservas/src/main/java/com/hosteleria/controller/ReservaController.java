@@ -34,9 +34,9 @@ public class ReservaController {
 	}
 	
 	// localhost:9090/listarPorUsuario
-	@GetMapping(value="/listarPorUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ArrayList<Reserva> listarPorUsuario(@RequestParam("usuario") String usuario, @RequestParam("correo") String correo){
-		return service.listarReservasPorUsuario(usuario, correo);
+	@PostMapping(value="/listarPorUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ArrayList<Reserva> listarPorUsuario(@RequestParam("idUsuario") int idUsuario){
+		return service.listarReservasPorUsuario(idUsuario);
 	}
 	
 	

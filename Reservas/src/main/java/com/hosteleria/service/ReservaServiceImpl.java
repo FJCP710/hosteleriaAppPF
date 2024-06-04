@@ -42,16 +42,9 @@ public class ReservaServiceImpl implements ReservaService{
 	}
 
 	@Override
-	public ArrayList<Reserva> listarReservasPorUsuario(String usuario, String correo) {		Integer idUsu = dao.buscarIdUsuario(usuario, correo);
-		ArrayList<Reserva> reservasUsuario = new ArrayList<Reserva>();
-		
-		if(idUsu != null && idUsu != 0) {
-			reservasUsuario = dao.listarReservasPorUsuario(idUsu);
-		} else {
-			return null;
-		}
-		
-		return reservasUsuario;
+	public ArrayList<Reserva> listarReservasPorUsuario(int idUsuario) {
+				
+		return dao.listarReservasPorUsuario(idUsuario);
 	}
 
 	@Override
