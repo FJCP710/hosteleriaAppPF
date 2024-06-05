@@ -7,7 +7,7 @@ function submitForm() {
     const correo = document.getElementById('correo').value;
     const contra = document.getElementById('contra').value;
 
-    const url = 'http://localhost:8080/inicioSesion';
+    const url = 'http://localhost:9090/inicioSesion';
     fetch(url, {
         method: 'POST',
         headers: {
