@@ -72,7 +72,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public int cogerIdPorCorreo(String correo) {
+	public Integer cogerIdPorCorreo(String correo) {
 		
 		return dao.cogerIdPorCorreo(correo);
 	}

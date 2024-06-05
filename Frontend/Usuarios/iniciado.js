@@ -53,8 +53,8 @@ function reservar(razonSocial) {
     document.getElementById('reservation_datetime').min = minDateTime;
     
     var reservationForm = document.getElementById('reservation_form');
-    reservationForm.removeEventListener('submit', submitHandler); // Eliminar el controlador de eventos anterior
-    reservationForm.addEventListener('submit', submitHandler); // Añadir el nuevo controlador de eventos
+    reservationForm.removeEventListener('submit', submitHandler);
+    reservationForm.addEventListener('submit', submitHandler);
 
 function submitHandler(event){
     event.preventDefault();

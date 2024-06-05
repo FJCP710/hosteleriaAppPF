@@ -68,8 +68,12 @@ public class Reserva {
 	public int getNumPersonas() {
 		return numPersonas;
 	}
-
+	
 	public void setNumPersonas(int numPersonas) {
+		this.numPersonas = numPersonas;
+	}
+
+	public void NombreReserva(int numPersonas) {
 		this.numPersonas = numPersonas;
 	}
 

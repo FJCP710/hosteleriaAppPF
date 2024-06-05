@@ -14,40 +14,40 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hosteleria.model.Reserva;
 import com.hosteleria.service.ReservaService;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class ReservaController {
 	
 	@Autowired
 	ReservaService service;
 	
-	// localhost:9090/crearReserva
+	// localhost:8080/crearReserva
 	@PostMapping(value="/crearReserva")
 	public void crearReserva(@RequestBody Reserva reserva) {
 		service.altaReserva(reserva);
 	}
 	
-	// localhost:9090/listarPorRestaurante
+	// localhost:8080/listarPorRestaurante
 	@GetMapping(value="/listarPorRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Reserva> listarPorRestaurante(@RequestParam("restaurante") String restaurante, @RequestParam("ciudad") String ciudad){
 		return service.listarReservasPorRestaurante(restaurante, ciudad);
 	}
 	
-	// localhost:9090/listarPorUsuario
+	// localhost:8080/listarPorUsuario
 	@PostMapping(value="/listarPorUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Reserva> listarPorUsuario(@RequestParam("idUsuario") int idUsuario){
 		return service.listarReservasPorUsuario(idUsuario);
 	}
 	
 	
-	// localhost:9090/eliminarReserva
+	// localhost:8080/eliminarReserva
 	@PostMapping(value="/eliminarReserva")
 	public void eliminarReserva(@RequestBody Reserva reserva) {
 		service.eliminarReserva(reserva);
 	}
 	
 	
-	// localhost:9090/modificarReserva
+	// localhost:8080/modificarReserva
 	@PostMapping(value="/modificarReserva")
 	public void modificarReserva(@RequestBody Reserva reserva) {
 		service.modificarReserva(reserva);

@@ -48,23 +48,11 @@ public class ReservaServiceImpl implements ReservaService{
 	}
 
 	@Override
-	public void eliminarReserva(Reserva reserva) {		ArrayList<Reserva> res = dao.buscarReserva(reserva.getIdUsuario(), reserva.getIdRestaurante());
-		long fecha1;
-		long fecha2;
+	public void eliminarReserva(Reserva reserva) {
+		int comrpobarReserva = dao.comprobarExistenciaReserva(reserva.getIdUsuario(), reserva.getIdRestaurante(), reserva.getFecha());
 		
-		if(res.size() == 2) {
-			for(int i = 0; i < res.size() - 1; i++) {
-				fecha1 = Math.abs(Duration.between(hoy, res.get(i).getFecha()).toSeconds());
-				fecha2 = Math.abs(Duration.between(hoy, res.get(i+1).getFecha()).toSeconds());
-				
-				if(fecha1 < fecha2) {
-					dao.delete(res.get(i));
-				} else {
-					dao.delete(res.get(i+1));
-				}
-			}
-		} else {
-			dao.delete(res.get(0));
+		if(comrpobarReserva != 0) {
+			dao.deleteById(reserva.getIdReserva());
 		}
 		dao.flush();
 	}
@@ -98,6 +86,11 @@ public class ReservaServiceImpl implements ReservaService{
 			
 			if(reserva.getNumPersonas() != r.getNumPersonas()) {
 				r.setNumPersonas(reserva.getNumPersonas());
+				dao.save(r);
+			}
+			
+			if(reserva.getNombreReserva() != r.getNombreReserva()) {
+				r.setNombreReserva(reserva.getNombreReserva());
 				dao.save(r);
 			}
 		}

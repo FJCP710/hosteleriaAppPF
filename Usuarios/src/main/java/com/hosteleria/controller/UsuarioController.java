@@ -22,43 +22,43 @@ public class UsuarioController {
 	@Autowired
 	UsuarioService service;
 	
-	//localhost:8080/borrarUsuario
+	//localhost:9090/borrarUsuario
 	@PostMapping(value="/borrarUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void eliminarUsuario(@RequestParam("idUsuario") int idUsuario) {
 		service.eliminarUsuario(idUsuario);
 	}
 	
-	// localhost:8080/usuario
+	// localhost:9090/usuario
 	@GetMapping(value="/usuario", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Usuario buscarUsuario(@RequestParam("idUsuario") int idUsuario) {
 		return service.buscarUsuario(idUsuario);
 	}
 	
-	// localhost:8080/crearUsuario
+	// localhost:9090/crearUsuario
 	@PostMapping(value="/crearUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void comprobarAltaUsuario(@RequestBody Usuario usuario) {
 		service.comprobarAltaUsuario(usuario);
 	}
 	
-	// localhost:8080/nombreUsuario
+	// localhost:9090/nombreUsuario
 	@GetMapping(value="/nombreUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<String> buscarNombrePorUsuario(@RequestParam("usuario") String usuario) {
 		return service.buscarNombrePorUsuario(usuario);
 	}
 	
-	// localhost:8080/edad
+	// localhost:9090/edad
 	@GetMapping(value="/edad", produces = MediaType.APPLICATION_JSON_VALUE)
 	public boolean verificarEdad(@RequestParam("idUsuario") int idUsuario) {
 		return service.verificarEdad(idUsuario);
 	}
 	
-	//localhost:8080/modificarContra
+	//localhost:9090/modificarContra
 	@PostMapping(value="/modificar")
 	public void modificar(@RequestParam("usuario") String usuario, @RequestParam("contra") String contra, @RequestParam("correo") String correo) {
 		service.modificarUsuarioYContra(usuario, contra, correo);
 	}
 	
-	//localhost:8080/inicioSesion
+	//localhost:9090/inicioSesion
 	@PostMapping(value="/inicioSesion", produces = MediaType.APPLICATION_JSON_VALUE)
 	public boolean comprobarCorreoYContra(@RequestBody Map<String, String> datos) {
 	    String correo = datos.get("correo");
@@ -67,9 +67,9 @@ public class UsuarioController {
 	}
 
 	
-	//localhost:8080/idPorCorreo
+	//localhost:9090/idPorCorreo
 	@PostMapping(value="/idPorCorreo", produces = MediaType.APPLICATION_JSON_VALUE)
-	public int cogerIdPorCorreo(@RequestParam("correo") String correo) {
+	public Integer cogerIdPorCorreo(@RequestParam("correo") String correo) {
 		return service.cogerIdPorCorreo(correo);
 	}
 	
