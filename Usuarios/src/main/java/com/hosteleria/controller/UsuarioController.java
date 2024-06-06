@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,9 +37,11 @@ public class UsuarioController {
 	
 	// localhost:9090/crearUsuario
 	@PostMapping(value="/crearUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
-	public void comprobarAltaUsuario(@RequestBody Usuario usuario) {
-		service.comprobarAltaUsuario(usuario);
+	public ResponseEntity<?> comprobarAltaUsuario(@RequestBody Usuario usuario) {
+	    service.comprobarAltaUsuario(usuario);
+	    return ResponseEntity.ok("Usuario creado con éxito");
 	}
+
 	
 	// localhost:9090/nombreUsuario
 	@GetMapping(value="/nombreUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
