@@ -21,4 +21,10 @@ public interface ProductoDao extends JpaRepository<Producto, Integer> {
 	
 	@Query(value="SELECT * FROM producto p WHERE p.precio <= :precio BY p.precio ASC", nativeQuery = true)
 	public ArrayList<Producto> productosMenores(@Param("precio") double precio);
+	
+	@Query(value="SELECT * FROM producto p WHERE p.nombre = :nombre", nativeQuery = true)
+	public Integer cogerIdPorNombre(@Param("nombre") String nombre);
+	
+	@Query(value="SELECT * FROM producto p WHERE p.id_producto = :idProducto", nativeQuery = true)
+	public Producto cogerProductoPorId(@Param("idProducto") int idProducto);
 }

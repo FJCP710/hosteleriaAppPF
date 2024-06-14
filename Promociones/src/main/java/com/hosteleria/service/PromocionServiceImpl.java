@@ -16,7 +16,7 @@ public class PromocionServiceImpl implements PromocionService {
 	
 	@Override
 	public void crearPromocion(Promocion promocion) {
-		int comprobarPromocion = dao.comprobarExistenciaPromocion(promocion.getIdRestaurante(), promocion.getIdRestaurante());
+		int comprobarPromocion = dao.comprobarExistenciaPromocion(promocion.getIdRestaurante(), promocion.getIdProducto());
 		
 		if(comprobarPromocion == 0) {
 			dao.saveAndFlush(promocion);
@@ -36,8 +36,8 @@ public class PromocionServiceImpl implements PromocionService {
 					dao.save(pro);
 				}
 				
-				if(promocion.getPrecionMin() != pro.getPrecionMin()) {
-					pro.setPrecionMin(promocion.getPrecionMin());
+				if(promocion.getPrecioMin() != pro.getPrecioMin()) {
+					pro.setPrecionMin(promocion.getPrecioMin());
 					dao.save(pro);
 				}
 			}
@@ -58,8 +58,20 @@ public class PromocionServiceImpl implements PromocionService {
 
 	@Override
 	public ArrayList<Promocion> listarPromocionesPorRestaurante(int idRestaurante) {
+		ArrayList<Promocion> promocion = dao.listarPromocionesPorRestaurante(idRestaurante);
 		
-		return dao.listarPromocionesPorRestaurante(idRestaurante);
+		for (Promocion p : promocion) {
+			if(p.getPorcentaje() == null) {
+				p.setPorcentaje(0.0);
+			}
+			if(p.getPrecioMin() == null) {
+				p.setPrecionMin(0.0);
+			}
+		}
+		
+		return promocion;
 	}
+
+	
 
 }

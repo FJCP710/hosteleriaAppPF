@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../index/styles.css">
+    <script src="" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../logo.png" alt="Logo" id="logo">
+        <div>
+            <button id="cierre">Cerrar sesión</button>
+            <button onclick="window.location='../Productos/misProductos.html'">Mis Productos</button>
+        </div>
+    </header>
+    <h2>Incluir productos en promocion</h2>
+        <form id="producto">
+            <label for="nombreProducto">Nombre del producto:</label><br>
+            <input type="text" id="nombreProducto" name="nombreProducto"><br>
+            <label for="precio">Precio:</label><br>
+            <input type="text" id="precio" name="precio"><br>
+            <label for="dimension">Dimension:</label><br>
+            <input type="text" id="dimension" name="dimension"><br>
+            <label for="porcentaje">Porcentaje:</label><br>
+            <input type="number" id="porcentaje" name="porcentaje" min="0" step="0.01"><br>
+            <label for="precioMin">Precio mínimo:</label><br>
+            <input type="text" id="precioMin" name="precioMin"><br>
+        </form><br>
+    <input type="submit" value="Incluir" id="incluir">
+
+    <footer>
+        <p>© 2024 Reservas y Promociones. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" type="text/css" href="../index/styles.css">
+    <script src="registro.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../logo.png" alt="Logo" id="logo">
+        <h2>Registro de Restaurante</h2>
+        <div>
+            <button onclick="window.location.href='inicioSesion.html'">Inicio de sesión</button>
+            <button onclick="window.location.href='../index/index.html'">Volver al inicio</button>
+        </div>
+    </header>
+
+    <main>
+        <form id="registroForm">
+            <label for="nombreComercial">Nombre Comercial:</label><br>
+            <input type="text" id="nombreComercial" name="nombreComercial"><br>
+            <label for="razonSocial">Razón Social:</label><br>
+            <input type="text" id="razonSocial" name="razonSocial"><br>
+            <label for="calle">Calle:</label><br>
+            <input type="text" id="calle" name="calle"><br>
+            <label for="numero">Número:</label><br>
+            <input type="text" id="numero" name="numero"><br>
+            <label for="ciudad">Ciudad:</label><br>
+            <input type="text" id="ciudad" name="ciudad"><br>
+            <label for="aforo">Aforo:</label><br>
+            <input type="number" id="aforo" name="aforo"><br>
+            <label for="mesasDisponibles">Mesas Disponibles:</label><br>
+            <input type="number" id="mesasDisponibles" name="mesasDisponibles"><br>
+            <label for="reservarLocal">Reservar Local:</label><br>
+            <input type="checkbox" id="reservarLocal" name="reservarLocal"><br>
+            <label for="correo">Correo Electrónico:</label><br>
+            <input type="email" id="correo" name="correo"><br>
+            <label for="contra">Contraseña:</label><br>
+            <input type="password" id="contra" name="contra"><br>
+            <input type="button" value="Registrarse" onclick="submitForm()">
+        </form>
+        
+    </main>
+
+    <footer>
+        <p>© 2024 Reservas y Promociones. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

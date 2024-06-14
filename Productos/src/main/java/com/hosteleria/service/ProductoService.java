@@ -10,4 +10,6 @@ public interface ProductoService {
 	void eliminarProducto(Producto producto);
 	ArrayList<Producto> listaProductosPrecioMayor(double precio);
 	ArrayList<Producto> listaProductosPrecioMeno(double precio);
+	Integer cogerIdPorNombre(String nombre);
+	ArrayList<Producto> listarPorId(ArrayList<Integer> idsProductos);
 }

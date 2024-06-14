@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         listadoReservas.forEach(reserva => {
             let tr = document.createElement('tr');
+            
             let tdNombre = document.createElement('td');
             tdNombre.textContent = reserva.nombreReserva ;
             tr.appendChild(tdNombre);
@@ -67,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
             mod.setAttribute("onclick", `modificarReserva(${reserva.idReserva}, ${reserva.idUsuario}, ${reserva.idRestaurante})`);
             del.setAttribute("onclick", `eliminarReserva(${reserva.idReserva}, ${reserva.idUsuario}, ${reserva.idRestaurante},
                 '${reserva.nombreReserva}', ${reserva.numPersonas}, '${reserva.fecha}')`);
-
 
         });
 
@@ -163,7 +163,7 @@ function eliminarReserva(idReserva, idUsuario, idRestaurante, nombreReserva, num
         if (!response.ok) {
             throw new Error(`Error al eliminar reserva: ${response.status}`);
         }
-        return response.text(); // Devuelve el texto de la respuesta
+        return response.text();
     })
     .then(text => {
         alert(`Reserva en ${reservaDel.restaurante} con fecha ${reservaDel.fecha} eliminada`)

@@ -23,9 +23,6 @@ public interface ReservaDao extends JpaRepository<Reserva, Integer> {
 	@Query(value="SELECT * FROM reserva r WHERE r.id_usuario = :idUsuario", nativeQuery = true)
 	public ArrayList<Reserva> listarReservasPorUsuario(@Param("idUsuario") int idUsuario);
 	
-	@Query(value = "SELECT u.id_usuario FROM usuarios u WHERE u.usuario = :usuario AND u.correo = :correo", nativeQuery = true)
-	public Integer buscarIdUsuario(@Param("usuario") String usuario, @Param("correo") String correo);
-	
 	@Query(value="SELECT * FROM reserva r WHERE r.id_usuario = :idUsuario AND r.id_restaurante = :idRestaurante AND r.fecha >= curdate() AND r.fecha <= date_add(CURDATE(), INTERVAL 1 MONTH)", nativeQuery = true)
 	public ArrayList<Reserva> buscarReserva(@Param("idUsuario") int idUsuario, @Param("idRestaurante") int idRestaurante);
 	

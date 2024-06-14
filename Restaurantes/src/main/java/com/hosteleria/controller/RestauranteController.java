@@ -1,11 +1,11 @@
 package com.hosteleria.controller;
 
 import java.util.ArrayList;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +25,9 @@ public class RestauranteController {
 	
 	// localhost:9080/crearRestaurante
 	@PostMapping(value="/crearRestaurante")
-	public void crearRestaurante(@RequestBody Restaurante restaurante) {
+	public ResponseEntity<?> crearRestaurante(@RequestBody Restaurante restaurante) {
 		service.altaRestaurante(restaurante);
+		return ResponseEntity.ok("Usuario creado con éxito");
 	}
 	
 	// localhost:9080/buscarRestaurantesCiudad
@@ -63,5 +64,19 @@ public class RestauranteController {
 	@PostMapping(value="/cogerIdPorRazonSocial", produces = MediaType.APPLICATION_JSON_VALUE)
 	public int cogerIdPorNombreCalleCiudad(@RequestParam("razonSocial") String razonSocial) {
 		return service.cogerIdPorRazonSocial(razonSocial);
+	}
+	
+	//localhost:9080/inicioSesion
+	@PostMapping(value="/inicioSesion", produces = MediaType.APPLICATION_JSON_VALUE)
+	public boolean comprobarCorreoYContra(@RequestBody Map<String, String> datos) {
+	    String correo = datos.get("correo");
+	    String contra = datos.get("contra");
+	    return service.comprobarCorreoYContra(correo, contra);
+	}
+	
+	//localhost:9080/idPorCorreo
+	@PostMapping(value="/idPorCorreo", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Integer cogerIdPorCorreo(@RequestParam("correo") String correo) {
+		return service.cogerIdPorCorreo(correo);
 	}
 }

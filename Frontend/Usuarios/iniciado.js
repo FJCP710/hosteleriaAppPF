@@ -15,7 +15,7 @@ botonBuscar.addEventListener('click', function() {
 let cerrarSesion = document.getElementById("cierre").addEventListener("click", ()=>{
     document.cookie = 'sesion=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     window.location.href='../index/index.html';
-})
+});
 
 function buscarRestaurantes(ciudad, calle = '') {
     let url = `http://localhost:9080/buscarRestaurantesCiudad?ciudad=${ciudad}`;
@@ -72,7 +72,7 @@ function submitHandler(event){
     }
 
     let urlIdCorreo = `http://localhost:8080/idPorCorreo?correo=${correo}`;
-    let urlIdRestaurante = `http://localhost:9080/cogerIdPorRazonSocial?razonSocial=${razonSocial}`;
+    let urlIdRestaurante = `http://localhost:9090/cogerIdPorRazonSocial?razonSocial=${razonSocial}`;
 
     Promise.all([
         fetch(urlIdCorreo, {

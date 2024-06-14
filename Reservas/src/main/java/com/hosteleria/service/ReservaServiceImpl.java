@@ -119,4 +119,9 @@ public class ReservaServiceImpl implements ReservaService{
 		return res;
 	}
 
+	@Override
+	public ArrayList<Reserva> listarReservasPorIdRestaurante(int idRestaurante) {
+		return dao.listarReservasPorRestaurante(idRestaurante);
+	}
+
 }

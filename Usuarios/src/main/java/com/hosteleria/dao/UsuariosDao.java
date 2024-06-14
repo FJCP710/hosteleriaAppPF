@@ -38,4 +38,7 @@ public interface UsuariosDao extends JpaRepository<Usuario, Integer> {
 
 	@Query(value="SELECT u.id_usuario FROM usuarios u WHERE u.correo = :correo", nativeQuery = true)
 	public Integer cogerIdPorCorreo(@Param("correo") String correo);
+	
+	@Query(value = "SELECT u.id_usuario FROM usuarios u WHERE u.usuario = :usuario AND u.correo = :correo", nativeQuery = true)
+	public Integer buscarIdUsuario(@Param("usuario") String usuario, @Param("correo") String correo);
 }

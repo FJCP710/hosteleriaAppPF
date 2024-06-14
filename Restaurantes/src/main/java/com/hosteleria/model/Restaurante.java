@@ -30,12 +30,14 @@ public class Restaurante {
 	private boolean reservarLocal;
 	
 	private String correo;
+	
+	private String contra;
 
 	public Restaurante() {
 		super();
 	}
 
-	public Restaurante(String nombreComercial, String calle, int numero, String ciudad, int aforo, int mesasDisponibles, boolean reservarLocal, String correo) {
+	public Restaurante(String nombreComercial, String calle, int numero, String ciudad, int aforo, int mesasDisponibles, boolean reservarLocal, String correo, String contra) {
 		super();
 		this.nombreComercial = nombreComercial;
 		this.calle = calle;
@@ -45,6 +47,7 @@ public class Restaurante {
 		this.mesasDisponibles = mesasDisponibles;
 		this.reservarLocal = reservarLocal;
 		this.correo = correo;
+		this.contra = contra;
 	}
 
 	public String getNombreComercial() {
@@ -121,5 +124,13 @@ public class Restaurante {
 
 	public void setCorreo(String correo) {
 		this.correo = correo;
+	}
+
+	public String getContra() {
+		return contra;
+	}
+
+	public void setContra(String contra) {
+		this.contra = contra;
 	}
 }

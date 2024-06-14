@@ -1,7 +1,5 @@
 package com.hosteleria.model;
 
-import java.util.ArrayList;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -21,24 +19,22 @@ public class Promocion {
 	@Column(name="id_producto")
 	private int idProducto;
 	
-	@Column(name="productos_rebajados")
-	private ArrayList<String> productosRebajados;
-	private int porcentaje;
+	private Double porcentaje;
 	
 	@Column(name="precio_min")
-	private double precionMin;
+	private Double precioMin;
 
 	public Promocion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Promocion(int idRestaurante, int idProducto,	int porcentaje, double precionMin) {
+	public Promocion(int idRestaurante, int idProducto,	Double porcentaje, Double precioMin) {
 		super();
 		this.idRestaurante = idRestaurante;
 		this.idProducto = idProducto;
 		this.porcentaje = porcentaje;
-		this.precionMin = precionMin;
+		this.precioMin = precioMin;
 	}
 
 	public int getIdPromociones() {
@@ -57,28 +53,20 @@ public class Promocion {
 		this.idRestaurante = idRestaurante;
 	}
 
-	public ArrayList<String> getProductosRebajados() {
-		return productosRebajados;
-	}
-
-	public void setProductosRebajados(ArrayList<String> productosRebajados) {
-		this.productosRebajados = productosRebajados;
-	}
-
-	public int getPorcentaje() {
+	public Double getPorcentaje() {
 		return porcentaje;
 	}
 
-	public void setPorcentaje(int porcentaje) {
+	public void setPorcentaje(Double porcentaje) {
 		this.porcentaje = porcentaje;
 	}
 
-	public double getPrecionMin() {
-		return precionMin;
+	public Double getPrecioMin() {
+		return precioMin;
 	}
 
-	public void setPrecionMin(double precionMin) {
-		this.precionMin = precionMin;
+	public void setPrecionMin(Double precioMin) {
+		this.precioMin = precioMin;
 	}
 
 	public int getIdProducto() {

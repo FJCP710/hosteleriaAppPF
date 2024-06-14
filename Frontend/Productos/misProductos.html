@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Aplicación</title>
+    <link rel="stylesheet" type="text/css" href="../index/styles.css">
+    <script src="misProductos.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../logo.png" alt="Logo" id="logo">
+        <div>
+            <button id="cierre">Cerrar sesión</button>
+            <button onclick="window.location='../Productos/productos.html'">Productos</button>
+        </div>
+    </header>
+
+    <main>
+
+        <h2></h2>
+        <table id="tabla">
+            <tr>
+                <th>Nombre del producto</th>
+                <th>Precio</th>
+                <th>Dimensión</th>
+                <th>Porcentaje</th> 
+                <th>Precio mínimo</th>
+                <th>Modificar / Eliminar</th>
+            </tr>
+        </table>
+
+        <form id="producto" style="display: none;">
+            <label for="nombreProducto">Nombre del producto:</label><br>
+            <input type="text" id="nombreProducto" name="nombreProducto"><br>
+            <label for="precio">Precio:</label><br>
+            <input type="text" id="precio" name="precio"><br>
+            <label for="dimension">Dimension:</label><br>
+            <input type="text" id="dimension" name="dimension"><br>
+            <label for="porcentaje">Porcentaje:</label><br>
+            <input type="number" id="porcentaje" name="porcentaje" min="0" step="0.01"><br>
+            <label for="precioMin">Precio mínimo:</label><br>
+            <input type="text" id="precioMin" name="precioMin"><br>
+            <input type="submit" value="Incluir" id="incluir">
+        </form><br>
+    
+
+    </main>
+
+    <footer>
+        <p>© 2024 Reservas y Promociones. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

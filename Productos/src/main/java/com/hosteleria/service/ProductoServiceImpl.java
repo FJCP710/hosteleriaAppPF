@@ -75,5 +75,21 @@ public class ProductoServiceImpl implements ProductoService {
 		
 		return dao.productosMenores(precio);
 	}
+
+	@Override
+	public Integer cogerIdPorNombre(String nombre) {
+		return dao.cogerIdPorNombre(nombre);
+	}
+
+	@Override
+	public ArrayList<Producto> listarPorId(ArrayList<Integer> idsProductos) {
+		ArrayList<Producto> productos = new ArrayList<Producto>();
+		
+		for (Integer id : idsProductos) {
+			productos.add(dao.cogerProductoPorId(id));
+		}
+		
+		return productos;
+	}
 	
 }

@@ -33,6 +33,12 @@ public class ReservaController {
 		return service.listarReservasPorRestaurante(restaurante, ciudad);
 	}
 	
+	// localhost:8080/listarPorIdRestaurante
+	@PostMapping(value="/listarPorIdRestaurante", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ArrayList<Reserva> listarPorIdRestaurante(@RequestParam("idRestaurante") int idRestaurante){
+		return service.listarReservasPorIdRestaurante(idRestaurante);
+	}
+	
 	// localhost:8080/listarPorUsuario
 	@PostMapping(value="/listarPorUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Reserva> listarPorUsuario(@RequestParam("idUsuario") int idUsuario){
