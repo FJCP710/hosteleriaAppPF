@@ -71,20 +71,20 @@ function submitHandler(event){
         console.log(correo);
     }
 
-    let urlIdCorreo = `http://localhost:8080/idPorCorreo?correo=${correo}`;
-    let urlIdRestaurante = `http://localhost:9090/cogerIdPorRazonSocial?razonSocial=${razonSocial}`;
+    let urlIdCorreo = `http://localhost:9090/idPorCorreo?correo=${correo}`;
+    let urlIdRestaurante = `http://localhost:9080/cogerIdPorRazonSocial?razonSocial=${razonSocial}`;
 
     Promise.all([
         fetch(urlIdCorreo, {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(response => response.json()),
         fetch(urlIdRestaurante,{
             method: 'POST',
-            mode:'no-cors',
+            mode:'cors',
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -103,11 +103,11 @@ function submitHandler(event){
             };
         console.log("Datos combinados", reserva)
 
-        let urlReserva = `http://localhost:9090/crearReserva`;
+        let urlReserva = `http://localhost:8080/crearReserva`;
 
         return fetch(urlReserva, {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -123,10 +123,8 @@ function submitHandler(event){
     });
 
     var reservationSection = document.getElementById('reservation_section');
-    var reservationTitle = document.getElementById('reservation_title');
 
     reservationSection.style.backgroundColor = 'lightgrey';
-    reservationTitle.style.color = 'blue';
     }
 }
 
