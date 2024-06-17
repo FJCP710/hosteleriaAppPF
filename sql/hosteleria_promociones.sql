@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `hosteleria` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `hosteleria`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hosteleria
@@ -33,7 +35,7 @@ CREATE TABLE `promociones` (
   KEY `id_producto_idx` (`id_producto`),
   CONSTRAINT `id_producto` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
   CONSTRAINT `id_restaurante` FOREIGN KEY (`id_restaurante`) REFERENCES `restaurante` (`id_restaurante`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +44,7 @@ CREATE TABLE `promociones` (
 
 LOCK TABLES `promociones` WRITE;
 /*!40000 ALTER TABLE `promociones` DISABLE KEYS */;
-INSERT INTO `promociones` VALUES (1,1,1,3,NULL),(2,1,2,NULL,4),(3,3,2,NULL,3),(4,3,4,4.2,NULL),(5,2,2,NULL,5),(6,2,6,6.3,NULL),(7,4,4,NULL,4),(8,4,6,8.2,NULL);
+INSERT INTO `promociones` VALUES (1,1,1,3,NULL),(2,1,2,NULL,4),(3,3,2,NULL,3),(4,3,4,4.2,NULL),(5,2,2,NULL,5),(6,2,6,6.3,NULL),(7,4,4,NULL,4),(8,4,6,8.2,NULL),(41,1,13,0,2.5),(42,1,14,NULL,2.1);
 /*!40000 ALTER TABLE `promociones` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-16 13:23:20
+-- Dump completed on 2024-06-17 15:46:21
